@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pymt5linux"
+version = "1.0.0"
+authors = [
+    { name = "Henrique Perez de Andrade", email = "hpdeandrade@gmail.com" },
+]
+description = "MetaTrader5 for Linux"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "rpyc"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/hpdeandrade/pymt5linux"

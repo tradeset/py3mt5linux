@@ -1,16 +1,22 @@
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
+
 setup(
-    name='mt5linux',
-    packages=find_packages(include=['mt5linux']),
-    version='0.2.0',
-    description='MetaTrader5 for linux users',
-    long_description=open('README.md','r').read(),
-    long_description_content_type='text/markdown',
-    author='Lucas Prett Campagna',
-    license='MIT',
-    url = 'https://github.com/lucas-campagna/mt5linux',
-    install_requires=open('requirements.txt','r').read().split('\n'),
-    setup_requires=[],
-    tests_require=[],
-    test_suite='tests',
+    name="pymt5linux",
+    version="1.0.0",
+    author="Henrique Perez de Andrade",
+    author_email="hpdeandrade@gmail.com",
+    description="MetaTrader5 for Linux",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/hpdeandrade/pymt5linux",
+    packages=find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.13",
+    install_requires=[
+        "rpyc"
+    ]
 )
