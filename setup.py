@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pymt5linux",
-    version="1.0.0",
+    version="1.0",
     author="Henrique Perez de Andrade",
     author_email="hpdeandrade@gmail.com",
     description="MetaTrader5 for Linux",
