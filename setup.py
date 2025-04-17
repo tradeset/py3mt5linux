@@ -1,21 +1,21 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pymt5linux",
+    name="py3mt5linux",
     version="1.0",
-    author="Henrique Perez de Andrade",
-    author_email="hpdeandrade@gmail.com",
+    author="Morteza Omidi",
+    author_email="Mortezaomidi24@yahoo.com",
     description="MetaTrader5 for Linux",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/hpdeandrade/pymt5linux",
+    url="https://github.com/tradeset/py3mt5linux",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.13",
+    python_requires=">=3.9",
     install_requires=[
         "rpyc"
     ]

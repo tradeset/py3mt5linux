@@ -1,5 +1,9 @@
 # pymt5linux
 
+
+
+**work with  Python >= 3.9**
+
 **Forked from [lucas-campagna/mt5linux](https://github.com/lucas-campagna/mt5linux). This is a up-to-date version which incorporates recent MT5 software updates. It works with Python 3.13.**
 
 **As an alternative to the setup below, you can also opt to run a Docker image of MT5 with x11/noVNC remote access. Check out [mt5docker](https://github.com/hpdeandrade/mt5docker) for details.**
