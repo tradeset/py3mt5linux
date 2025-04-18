@@ -1,7 +1,7 @@
 # pymt5linux
 
 **Forked from https://github.com/hpdeandrade/pymt5linux.
-**work with  Python >= 3.9**
+**work with  Python >= 3.7**
 
 pip install git+https://github.com/tradeset/py3mt5linux.git
 
