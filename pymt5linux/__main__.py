@@ -47,16 +47,14 @@ def main():
     project_path = module_path.parent
     server_path = project_path / server_dir
     server_path.mkdir(exist_ok=True, parents=True)
-    print(f"win_python_path:{win_python_path}")
+
     # copy server
     shutil.copy2(src=server.__file__, dst=server_path / server_code)
 
     # execute
     Popen(
         [
-        # "wine",
-        # str(win_python_path),
-        str('/config/.wine/drive_c/Program Files (x86)/Python39-32/python.exe'),
+        str(win_python_path),
         str(server_path / server_code),
         "--host",
         host,
