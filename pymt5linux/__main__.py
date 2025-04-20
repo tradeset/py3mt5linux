@@ -54,6 +54,7 @@ def main():
     # execute
     Popen(
         [
+        "wine",
         str(win_python_path),
         str(server_path / server_code),
         "--host",
