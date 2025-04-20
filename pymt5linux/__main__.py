@@ -54,7 +54,7 @@ def main():
     # execute
     Popen(
         [
-        "wine",
+        # "wine",
         # str(win_python_path),
         str('/config/.wine/drive_c/Program Files (x86)/Python39-32/python.exe'),
         str(server_path / server_code),
