@@ -269,7 +269,7 @@ class MetaTrader5(object):
         """
 
         self.__conn = rpyc.classic.connect(host, port)
-        self.__conn._config["sync_request_timeout"] = 300
+        self.__conn._config["sync_request_timeout"] = 6000
         self.__conn.execute("import MetaTrader5 as mt5")
         self.__conn.execute("import datetime")
 

@@ -4,11 +4,13 @@ from pathlib import Path
 from subprocess import Popen
 from rpyc.utils.classic import DEFAULT_SERVER_PORT, DEFAULT_SERVER_SSL_PORT
 from pymt5linux import server
+import os
+
 
 def main():
     parser = argparse.ArgumentParser(description="Create Server.")
     parser.add_argument(
-        "python",
+        "--python",
         type=str,
         help="Python that will run the server (have to be a Windows version!)"
     )
@@ -26,6 +28,13 @@ def main():
         help=f"The TCP listener port (default = {DEFAULT_SERVER_PORT!r}, default for SSL = {DEFAULT_SERVER_SSL_PORT!r})"
     )
     parser.add_argument(
+        '-w',
+        '--wine',
+        type=str,
+        default='wine',
+        help='Command line to call wine program (default = wine)',
+        )
+    parser.add_argument(
         "-s",
         "--server",
         type=str,
@@ -34,34 +43,24 @@ def main():
     )
 
     args = parser.parse_args()
+    os.makedirs(args.server, exist_ok=True)
 
-    # parameters
-    win_python_path = args.python
-    server_dir = args.server
-    port = args.port
-    host = args.host
-    server_code = "server.py"
+    # Generate server script
+    server_script_path = os.path.join(args.server, 'server.py')
+    shutil.copy2(src=server.__file__, dst=server_script_path)
 
-    # create dir
-    module_path = Path(__file__).parent
-    project_path = module_path.parent
-    server_path = project_path / server_dir
-    server_path.mkdir(exist_ok=True, parents=True)
+    # Start the server
+    cmd = [
+        args.wine,
+        args.python,
+        server_script_path,
+        '--host',
+        str(args.host),
+        '-p',
+        str(args.port)
+    ]
+    Popen(cmd).wait()
 
-    # copy server
-    shutil.copy2(src=server.__file__, dst=server_path / server_code)
-
-    # execute
-    Popen(
-        [
-        str(win_python_path),
-        str(server_path / server_code),
-        "--host",
-        host,
-        "-p",
-        str(port)
-        ], shell=True
-    ).wait()
 
 if __name__ == "__main__":
     main()

@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py3mt5linux"
+name = "pymt5linux"
 version = "1.0"
 authors = [
     { name = "Morteza omidi", email = "Mortezaomidi24@yahoo.com" },
@@ -16,4 +16,4 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/tradeset/py3mt5linux"
+"Homepage" = "https://github.com/tradeset/pymt5linux"
