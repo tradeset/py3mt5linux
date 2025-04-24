@@ -8,7 +8,7 @@ setup(
     description="MetaTrader5 for Linux",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/tradeset/pymt5linux",
+    url="https://github.com/tradeset/py3mt5linux",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

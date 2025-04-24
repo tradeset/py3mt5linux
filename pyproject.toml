@@ -16,4 +16,4 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/tradeset/pymt5linux"
+"Homepage" = "https://github.com/tradeset/py3mt5linux"
